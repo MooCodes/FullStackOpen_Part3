@@ -60,10 +60,17 @@ app.delete('/api/persons/:id', (req, res) => {
 app.post('/api/persons', (req, res) => {
     const body = req.body
 
-    if (!body.name) {
-        return res.status(404).json({ error: 'missing name' })
+    // check if name or # is missing
+    if (!body.name || !body.number) {
+        return res.status(404).json({ error: 'missing name or number' })
     }
 
+    // check if duplicate entry
+    if (persons.find(p => p.name === body.name)) {
+        return res.status(404).json({ error: 'name must be unique' })
+    }
+
+    // create new entry
     let newPerson = {
         name: body.name,
         number: body.number,
