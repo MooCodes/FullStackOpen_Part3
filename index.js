@@ -35,9 +35,9 @@ let persons = [
     }
 ]
 
-app.get('/', (req, res) => {
-    res.send('<h1>Phonebook App for Part 3</h1>')
-})
+// app.get('/', (req, res) => {
+//     res.send('<h1>Phonebook App for Part 3</h1>')
+// })
 
 app.get('/info', (req, res) => {
     const html = `<p>Phonebook has info for ${persons.length} people</p><p>${new Date()}</p>`
