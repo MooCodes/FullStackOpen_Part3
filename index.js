@@ -35,7 +35,7 @@ let persons = [
 ]
 
 app.get('/', (req, res) => {
-    res.send('<h1>Notes App for Part 3</h1>')
+    res.send('<h1>Phonebook App for Part 3</h1>')
 })
 
 app.get('/info', (req, res) => {
