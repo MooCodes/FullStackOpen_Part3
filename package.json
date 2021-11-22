@@ -4,6 +4,7 @@
   "description": "my solution for part3 exercises",
   "main": "index.js",
   "scripts": {
+    "build:ui": "rm -rf build && cd ../FullStackOpen/part2/phonebook && npm run build --prod && cp -r build ../../../FullStackOpen_Part3",
     "start": "node index.js",
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
